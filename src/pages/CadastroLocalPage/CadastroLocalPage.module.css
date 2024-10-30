@@ -1,0 +1,45 @@
+/* body,
+html {
+ height: 100%;
+}
+
+.containerPrincipalLocal {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+ background-color: #e5e5e5;
+ height: 100vh;
+}
+
+@media (min-width: 200px) and (max-width: 640px) {
+ .containerCadastroLocal .cadastroFormLocal form {
+  width: 17rem;
+  height: 100%;
+  background-color: white;
+  border-radius: 15px;
+  margin-top: 80px;
+ }
+
+ .containerCadastroLocal .cadastroFormLocal .gridNomeLocal {
+  width: 15rem;
+ }
+
+ .containerCadastroLocal .cadastroFormLocal .dadosEndereco {
+  display: flex;
+  flex-direction: column;
+  width: 15rem;
+  height: 100%;
+ }
+
+ .containerCadastroLocal .cadastroFormLocal .dadosEndereco div {
+  width: 100%;
+ }
+
+ .containerButtonCadastro {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 30px;
+ }
+} */

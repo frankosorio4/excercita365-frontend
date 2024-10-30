@@ -1,0 +1,224 @@
+.containerCadastroUsuario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #e5e5e5;
+    padding: 20px;
+}
+
+.logoCadastroUsuario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.cadastroFormUsuario .logoCadastroUsuario img {
+    width: 150px;
+    height: 150px;
+}
+
+.cadastroFormUsuario {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    max-width: 700px;
+    width: 100%;
+
+}
+
+.cadastroFormUsuario form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.gridNomeUsuario,
+.dadosComplementares,
+.dadosEndereco {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.dadosComplementares,
+.dadosEndereco {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.containerButtonCadastroUsuario {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+
+
+@media (min-width: 200px) and (max-width: 640px) {
+    .cadastroFormUsuario form {
+        padding: 20px;
+    }
+
+    .gridNomeUsuario,
+    .dadosComplementares,
+    .dadosEndereco {
+        width: 100%;
+        gap: 15px;
+    }
+
+    .dadosComplementares,
+    .dadosEndereco {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+    .cadastroFormUsuario {
+        max-width: 600px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .cadastroFormUsuario {
+        max-width: 900px;
+        font-size: 1.5rem;
+    }
+
+
+
+    input::placeholder {
+        font-size: 1.7rem;
+        color: #191717;
+    }
+
+    .gridNomeUsuario {
+        margin-bottom: 20px;
+    }
+
+    .gridNomeUsuario .MuiInputBase-input {
+        font-size: 1.7rem;
+    }
+
+    .dadosComplementares .MuiInputBase-input {
+        font-size: 1.7rem;
+    }
+
+    .dadosEndereco .MuiInputBase-input {
+        font-size: 1.7rem;
+    }
+
+
+
+    .dadosComplementares .customSelect {
+        font-size: 1.7rem;
+    }
+
+    .dadosComplementares .customMenuItem {
+        font-size: 1.7rem;
+    }
+
+
+    /* styles.css */
+    .customDate .MuiInputBase-input {
+        font-size: 1.5rem;
+    }
+
+    .customDate .MuiInputBase-input::placeholder {
+        font-size: 1rem;
+    }
+
+    .customDate .MuiOutlinedInput-root {
+        border-radius: 8px;
+    }
+
+
+    .customDate .Mui-error .MuiOutlinedInput-notchedOutline {
+        border-color: #f44336;
+    }
+
+
+
+}
+
+@media (min-width: 2000px) {
+    .cadastroFormUsuario {
+        max-width: 1900px;
+        font-size: 1.9rem;
+    }
+
+    input::placeholder {
+        font-size: 1.9rem;
+        color: #191717;
+    }
+
+    .gridNomeUsuario {
+        margin-bottom: 20px;
+    }
+
+    .gridNomeUsuario .MuiInputBase-input {
+        font-size: 1.9rem;
+    }
+
+    .dadosComplementares .MuiInputBase-input {
+        font-size: 1.9rem;
+    }
+
+    .dadosComplementares .customSelect {
+        font-size: 1.9rem;
+    }
+
+    .dadosComplementares .customMenuItem {
+        font-size: 1.9rem;
+    }
+
+    .dadosEndereco .MuiInputBase-input {
+        font-size: 1.9rem;
+    }
+
+
+    /* styles.css */
+    .customDate .MuiInputBase-input {
+        font-size: 1.7rem;
+    }
+
+    .customDate .MuiInputBase-input::placeholder {
+        font-size: 1.2rem;
+    }
+
+    .customDate .MuiOutlinedInput-root {
+        border-radius: 8px;
+    }
+
+
+    .customDate .Mui-error .MuiOutlinedInput-notchedOutline {
+        border-color: #f44336;
+    }
+}
+
+@media (min-width: 1000px) {
+    .buttonVoltar {
+        width: 250px;
+    }
+}
+
+@media (min-width: 1140px) {
+    .buttonVoltar {
+        width: 280px;
+
+    }
+}

@@ -1,0 +1,218 @@
+/* .containerCadastroLocal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background-color: #e5e5e5;
+}
+
+.logoCadastro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cadastroFormLocal .logoCadastroLocal img {
+  width: 150px;
+  height: 150px;
+}
+
+.cadastroFormLocal {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.cadastroFormLocal form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 800px;
+  width: 700px;
+  gap: 30px;
+  background-color: white;
+  border-radius: 15px;
+}
+
+.cadastroFormLocal img {
+  width: 100px;
+  height: 100px;
+  margin-top: 30px;
+}
+
+.gridNomeLocal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px 30px;
+  width: 42rem;
+}
+
+.gridNomeLocal div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 2rem;
+}
+
+.gridNomeLocal input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 0;
+}
+
+.dadosEndereco {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  gap: 30px 30px;
+  width: 10rem;
+  height: 2rem;
+}
+
+.dadosEndereco div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20rem;
+  height: rem;
+}
+
+.dadosEndereco input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 30rem;
+  height: 0;
+}
+
+.cadastroFormLocal form .containerSelecoes {
+  display: flex;
+  height: 40%;
+  width: 100%;
+  margin-top: 90px;
+}
+
+.containerSelecoes .atividade-titulo {
+  display: flex;
+  text-align: center;
+}
+
+.containerSelecoes .atividades {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+
+}
+
+.atividade-item {
+  flex: 1 0 45%;
+  margin: 5px;
+}
+
+.containerButtonCadastro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  margin-top: 15px;
+  gap: 20px;
+}
+
+.containerButtonCadastro .buttonHome {
+  background-color: white;
+  color: #1976d2;
+  font-weight: bold;
+}
+
+.containerButtonCadastro .buttonCadastrar:hover {
+  background-color: white;
+  color: #1976d2;
+  font-weight: bold;
+}
+
+.containerButtonCadastro .buttonHome:hover {
+  background-color: #1976d2;
+  color: white;
+  font-weight: bold;
+}
+
+@media (min-width: 200px) and (max-width: 640px) {
+  .containerCadastroLocal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .containerCadastroLocal .cadastroFormLocal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background-color: #e5e5e5;
+  }
+
+  .containerCadastroLocal .cadastroFormLocal form {
+    width: 17rem;
+    height: 100%;
+    background-color: white;
+    border-radius: 15px;
+  }
+
+  .cadastroFormLocal .gridNomeLocal {
+    width: 15rem;
+  }
+
+  .cadastroFormLocal .dadosComplementares {
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+  }
+
+  .cadastroFormLocal .dadosEndereco {
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    height: 100%;
+  }
+
+  .cadastroFormLocal .dadosEndereco div {
+    width: 100%;
+  }
+
+  .cadastroFormLocal form .containerSelecoes {
+    margin-top: 0;
+  }
+
+  .containerButtonCadastro {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 0;
+  }
+
+  .containerButtonCadastro .buttonHome {
+    font-size: 10px;
+  }
+
+  .containerButtonCadastro .buttonCadastrar {
+    font-size: 10px;
+  }
+} */

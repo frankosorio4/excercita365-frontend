@@ -1,0 +1,122 @@
+/* .containerCard {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+}
+
+.cardContainer {
+ display: flex;
+ height: 22rem;
+ width: 70rem;
+ margin-bottom: 15px;
+}
+
+@media (min-width: 200px) and (max-width: 640px) {
+ .cardContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50vw;
+  height: 100vh;
+ }
+
+ .cardContainer .boxDados {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 12px;
+ }
+
+ .cardContainer .boxDados .nomeLocal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-left: 25px;
+ }
+
+ .cardContainer .boxDados .descricao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 12px;
+  margin-bottom: 15px;
+  width: 10rem;
+  text-align: center;
+  margin-left: 30px;
+ }
+
+ .cardContainer .containerDados div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 12px;
+  width: 12rem;
+ }
+
+ .cardContainer .containerDados .endereco {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  width: 15rem;
+ }
+
+ .cardContainer .containerDados .municipio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  width: 15rem;
+ }
+
+ .cardContainer .dividerAtividades {
+  margin-bottom: 15px;
+  margin-top: 15px;
+  font-size: 12px;
+ }
+
+ .cardContainer .containerAtividades {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+ }
+
+}
+
+@media (max-width: 1024px) {
+ .cardContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50vw;
+  height: 100%;
+  margin-bottom: 15px;
+ }
+
+ .cardContainer .containerMapa {
+  width: 33rem;
+  height: 100%;
+  margin-top: -20px;
+ }
+
+ .cardContainer .boxDados {
+  width: 20rem;
+  height: 100%;
+ }
+
+ .cardContainer .cardActions {
+  display: flex;
+  justify-content: center;
+ }
+} */
