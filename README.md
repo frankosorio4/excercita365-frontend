@@ -46,6 +46,9 @@ Cadastra novos locais.
 
 Contribuições são sempre bem-vindas! Por favor, leia o arquivo CONTRIBUTING.md para mais detalhes sobre como contribuir para o projeto.
 
-## Licença
+## Autores
 
-Distribuído sob a licença MIT. Veja LICENSE para mais informações.
+- [@TThaz](https://www.github.com/TThaz)
+- [@douglascugliarisenai](https://www.github.com/douglascugliarisenai)
+- [@alanamandimifsc](https://www.github.com/alanamandimifsc)
+- [@frankosorio4](https://www.github.com/frankosorio4)
