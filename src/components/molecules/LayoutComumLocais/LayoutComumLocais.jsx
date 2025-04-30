@@ -6,6 +6,14 @@ import PeopleIcon from '@mui/icons-material/People';
 import FmdGoodIcon from '@mui/icons-material/FmdGood';
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import PropTypes from "prop-types";
+
+LayoutComum.propTypes = {
+    titulo: PropTypes.string,
+    showAuthButtons: PropTypes.bool,
+    showIcons: PropTypes.bool,
+    visivel: PropTypes.bool,
+};
 
 function LayoutComum({ titulo, showAuthButtons, showIcons, visivel }) {
     const { locais, totalLocais, getLocais } = useApiLocal();
