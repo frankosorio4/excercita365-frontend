@@ -10,15 +10,15 @@ import ListaLocalPage from "../pages/ListaLocalPage/ListaLocalPage";
 import { getCookie } from "../hooks/useCookies";
 import InitialPage from "../pages/InitialPage/InitialPage";
 
-const isAuthenticated = getCookie("usuarioLogado") !== null;
 const PrivateRoute = () => {
+    const isAuthenticated = getCookie("usuarioLogado") !== null;
     console.log("Autenticado: ", isAuthenticated)
-    return isAuthenticated ? <App/> : <Navigate to="/" />;
+    return isAuthenticated ? <App/> : <Navigate to="/login" />;
 };
 
 const routers = createBrowserRouter([
     {
-        path: "/",
+        path: "/public",
         element: <DashboardPage />
     },
     {
@@ -34,27 +34,31 @@ const routers = createBrowserRouter([
         element: <PrivateRoute />,
         errorElement: <ErroPage />,
         children: [
+            { 
+                index: true, 
+                element: <InitialPage/> 
+            },
             {
-                path: "/home",
+                path: "home",
                 element:
                     <InitialPage />
 
             },
             {
-                path: "/cadastroLocal",
+                path: "cadastroLocal",
                 element:
                     <CadastroLocalPage />
 
 
             },
             {
-                path: "/cadastroLocal/:id",
+                path: "cadastroLocal/:id",
                 element:
                     <CadastroLocalPage />
 
             },
             {
-                path: "/listaLocal",
+                path: "listaLocal",
                 element:
                     <ListaLocalPage />
 
