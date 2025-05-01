@@ -31,7 +31,6 @@ function CadastroLocalForm() {
         if (cepConsulta !== "") {
             const dadosCep = await useBuscaCep(cepConsulta);
             setValue("logradouro", dadosCep.logradouro);
-            setValue("municipio", dadosCep.localidade);
             setValue("bairro", dadosCep.bairro);
             setValue("cidade", dadosCep.localidade);
             setValue("estado", dadosCep.uf);
@@ -91,7 +90,6 @@ function CadastroLocalForm() {
             setValue("logradouro", response.logradouro);
             setValue("bairro", response.bairro);
             setValue("cidade", response.cidade);
-            setValue("municipio", response.municipio);
             setValue("estado", response.estado);
             setValue("latitude", response.latitude);
             setValue("longitude", response.longitude);
@@ -111,7 +109,6 @@ function CadastroLocalForm() {
         setValue("descricao", "");
         setValue("cep", "");
         setValue("logradouro", "");
-        setValue("municipio", "");
         setValue("estado", "");
         setValue("latitude", "");
         setValue("longitude", "");
@@ -225,51 +222,15 @@ function CadastroLocalForm() {
                         onInput={(event) => handleInput(event, 8)}
                     />
                     <TextField
-                        label="Logradouro"
+                        label="Estado"
                         variant="outlined"
                         fullWidth
                         margin="normal"
-                        error={!!errors.logradouro}
-                        helperText={errors.logradouro?.message}
-                        {...register("logradouro", {
+                        error={!!errors.uf}
+                        helperText={errors.uf?.message}
+                        {...register("estado", {
                             required: "Este campo é obrigatório.",
-                            maxLength: { value: 60, message: "Máximo de 60 caracteres." }
-                        })}
-                        InputLabelProps={{ shrink: true }}
-                    />
-                </Box>
-
-                <Box
-                    sx={{
-                        display: "flex",
-                        flexDirection: { xs: "column", sm: "row" },
-                        gap: 2,
-                        width: "100%",
-                        mb: 2
-                    }}>
-                    <TextField
-                        label="Bairro"
-                        variant="outlined"
-                        fullWidth
-                        margin="normal"
-                        error={!!errors.bairro}
-                        helperText={errors.bairro?.message}
-                        {...register("bairro", {
-                            required: "Este campo é obrigatório.",
-                            maxLength: { value: 50, message: "Máximo de 50 caracteres." }
-                        })}
-                        InputLabelProps={{ shrink: true }}
-                    />
-                    <TextField
-                        label="Município"
-                        variant="outlined"
-                        fullWidth
-                        margin="normal"
-                        error={!!errors.municipio}
-                        helperText={errors.municipio?.message}
-                        {...register("municipio", {
-                            required: "Este campo é obrigatório.",
-                            maxLength: { value: 20, message: "Máximo de 20 caracteres." }
+                            maxLength: { value: 2, message: "Máximo de 2 caracteres." }
                         })}
                         InputLabelProps={{ shrink: true }}
                     />
@@ -297,19 +258,44 @@ function CadastroLocalForm() {
                         InputLabelProps={{ shrink: true }}
                     />
                     <TextField
-                        label="Estado"
+                        label="Bairro"
                         variant="outlined"
                         fullWidth
                         margin="normal"
-                        error={!!errors.uf}
-                        helperText={errors.uf?.message}
-                        {...register("estado", {
+                        error={!!errors.bairro}
+                        helperText={errors.bairro?.message}
+                        {...register("bairro", {
                             required: "Este campo é obrigatório.",
-                            maxLength: { value: 2, message: "Máximo de 2 caracteres." }
+                            maxLength: { value: 50, message: "Máximo de 50 caracteres." }
                         })}
                         InputLabelProps={{ shrink: true }}
                     />
                 </Box>
+
+                <Box
+                    sx={{
+                        display: "flex",
+                        flexDirection: { xs: "column", sm: "row" },
+                        gap: 2,
+                        width: "100%",
+                        mb: 2,
+                        fontSize: { sm: "0.9rem", md: "1rem", lg: "1.1rem" }
+                    }}>
+                    <TextField
+                        label="Logradouro"
+                        variant="outlined"
+                        fullWidth
+                        margin="normal"
+                        error={!!errors.logradouro}
+                        helperText={errors.logradouro?.message}
+                        {...register("logradouro", {
+                            required: "Este campo é obrigatório.",
+                            maxLength: { value: 60, message: "Máximo de 60 caracteres." }
+                        })}
+                        InputLabelProps={{ shrink: true }}
+                    />
+                </Box>
+
 
                 <Box
                     sx={{
@@ -350,8 +336,8 @@ function CadastroLocalForm() {
                 <FormControl
                     component="fieldset"
                     variant="standard"
-                    sx={{ width: "100%", mb: 3}}>
-                    <FormLabel component="legend" sx={{ fontWeight: "bold", textAlign: "center", color: "primary.main"}}>Atividades Esportivas</FormLabel>
+                    sx={{ width: "100%", mb: 3 }}>
+                    <FormLabel component="legend" sx={{ fontWeight: "bold", textAlign: "center", color: "primary.main" }}>Atividades Esportivas</FormLabel>
                     <FormGroup
                         sx={{ display: "flex", flexDirection: "row", flexWrap: "wrap", mt: 2, justifyContent: "center" }}>
                         {atividadesDisponiveis.map((atividade, index) => (
