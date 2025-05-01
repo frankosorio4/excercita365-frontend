@@ -12,17 +12,17 @@ function TrilhasFooter() {
     <span>Exercise Open Air</span>
     <ul>
      <li>
-      <a href="https://github.com/douglascugliarisenai" target="_blank">
+      <a href="https://github.com/frankosorio4" target="_blank">
        <GitHubIcon sx={{ color: "black" }} />
       </a>
      </li>
      <li>
-      <a href="https://www.linkedin.com/in/douglascugliari/" target="_blank">
+      <a href="https://www.linkedin.com/in/frank-david-osorio/?locale=en_US" target="_blank">
        <LinkedInIcon sx={{ color: "black" }} />
       </a>
      </li>
      <li>
-      <a href="https://www.instagram.com/sant0s_d0ug/" target="_blank">
+      <a href="https://www.instagram.com/frank_osorio4/" target="_blank">
        <InstagramIcon sx={{ color: "black" }} />
       </a>
      </li>
