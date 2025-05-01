@@ -48,8 +48,6 @@ const routers = createBrowserRouter([
                 path: "cadastroLocal",
                 element:
                     <CadastroLocalPage />
-
-
             },
             {
                 path: "cadastroLocal/:id",
