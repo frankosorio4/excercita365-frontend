@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { TextField, Button, FormLabel, FormControl, FormGroup, FormControlLabel, Checkbox, Box }
+import { TextField, Button, FormLabel, FormControl, FormGroup, FormControlLabel, Checkbox, Box, Typography}
     from "@mui/material";
 import { useForm } from "react-hook-form";
 import "./index.css";
@@ -110,6 +110,10 @@ function CadastroLocalForm() {
         setValue("cep", "");
         setValue("logradouro", "");
         setValue("estado", "");
+        setValue("cidade", "");
+        setValue("bairro", "");
+        setValue("numeroCasa", "");
+        setValue("complemento", "");
         setValue("latitude", "");
         setValue("longitude", "");
         setAtividades({
@@ -167,8 +171,12 @@ function CadastroLocalForm() {
                     />
                 </Box>
 
+                <Typography variant="caption" color="text.secondary" sx={{ mb: 2, alignSelf: 'start' }}>
+                    Os campos com * são obrigatórios.
+                </Typography>
+
                 <TextField
-                    label="Nome do Local"
+                    label="Nome do Local *"
                     variant="outlined"
                     fullWidth
                     margin="normal"
@@ -183,7 +191,7 @@ function CadastroLocalForm() {
                 />
 
                 <TextField
-                    label="Descrição do Local"
+                    label="Descrição do Local *"
                     variant="outlined"
                     fullWidth
                     margin="normal"
@@ -207,7 +215,7 @@ function CadastroLocalForm() {
                         fontSize: { sm: "0.9rem", md: "1rem", lg: "1.1rem" }
                     }}>
                     <TextField
-                        label="CEP"
+                        label="CEP *"
                         variant="outlined"
                         fullWidth
                         margin="normal"
@@ -222,7 +230,7 @@ function CadastroLocalForm() {
                         onInput={(event) => handleInput(event, 8)}
                     />
                     <TextField
-                        label="Estado"
+                        label="Estado *"
                         variant="outlined"
                         fullWidth
                         margin="normal"
@@ -245,7 +253,7 @@ function CadastroLocalForm() {
                         mb: 2
                     }}>
                     <TextField
-                        label="Cidade"
+                        label="Cidade *"
                         variant="outlined"
                         fullWidth
                         margin="normal"
@@ -258,7 +266,7 @@ function CadastroLocalForm() {
                         InputLabelProps={{ shrink: true }}
                     />
                     <TextField
-                        label="Bairro"
+                        label="Bairro *"
                         variant="outlined"
                         fullWidth
                         margin="normal"
@@ -282,7 +290,7 @@ function CadastroLocalForm() {
                         fontSize: { sm: "0.9rem", md: "1rem", lg: "1.1rem" }
                     }}>
                     <TextField
-                        label="Logradouro"
+                        label="Logradouro *"
                         variant="outlined"
                         fullWidth
                         margin="normal"
@@ -296,6 +304,36 @@ function CadastroLocalForm() {
                     />
                 </Box>
 
+                <Box
+                    sx={{
+                        display: "flex",
+                        flexDirection: { xs: "column", sm: "row" },
+                        gap: 2,
+                        width: "100%",
+                        mb: 2
+                    }}>
+                    <TextField
+                        label="Numero"
+                        variant="outlined"
+                        fullWidth
+                        margin="normal"
+                        type="number"
+                        {...register("numeroCasa", {
+                            maxLength: { value: 10, message: "Máximo de 10 caracteres." }
+                        })}
+                        InputLabelProps={{ shrink: true }}
+                    />
+                    <TextField
+                        label="Complemento"
+                        variant="outlined"
+                        fullWidth
+                        margin="normal"
+                        {...register("complemento", {
+                            maxLength: { value: 50, message: "Máximo de 50 caracteres." }
+                        })}
+                        InputLabelProps={{ shrink: true }}
+                    />
+                </Box>
 
                 <Box
                     sx={{
@@ -313,7 +351,6 @@ function CadastroLocalForm() {
                         error={!!errors.latitude}
                         helperText={errors.latitude?.message}
                         {...register("latitude", {
-                            required: "Este campo é obrigatório.",
                             maxLength: { value: 11, message: "Máximo de 10 caracteres." }
                         })}
                         InputLabelProps={{ shrink: true }}
@@ -326,7 +363,6 @@ function CadastroLocalForm() {
                         error={!!errors.longitude}
                         helperText={errors.longitude?.message}
                         {...register("longitude", {
-                            required: "Este campo é obrigatório.",
                             maxLength: { value: 11, message: "Máximo de 10 caracteres." }
                         })}
                         InputLabelProps={{ shrink: true }}
