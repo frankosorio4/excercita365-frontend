@@ -1,14 +1,6 @@
 /* eslint-disable */
-import {
-    TextField,
-    Button,
-    FormLabel,
-    FormControl,
-    FormGroup,
-    FormControlLabel,
-    Checkbox,
-    Box
-} from "@mui/material";
+import { TextField, Button, FormLabel, FormControl, FormGroup, FormControlLabel, Checkbox, Box }
+    from "@mui/material";
 import { useForm } from "react-hook-form";
 import "./index.css";
 import { Link, useParams, useNavigate } from "react-router-dom";
@@ -20,20 +12,11 @@ import { getCookie } from "../../../hooks/useCookies";
 import { LocalContext } from "../../../context/LocalContext";
 
 function CadastroLocalForm() {
-    const {
-        register,
-        handleSubmit,
-        getValues,
-        setValue,
-        formState: { errors }
-    } = useForm();
+    const { register, handleSubmit, getValues, setValue, formState: { errors } } = useForm();
+
     const { atividadesDisponiveis } = useContext(LocalContext)
-
     const navigate = useNavigate();
-
-    const { cadastrarLocal, editarLocal, getLocalPorId } =
-        useApiLocal();
-
+    const { cadastrarLocal, editarLocal, getLocalPorId } = useApiLocal();
     const { id } = useParams();
     const [label, setLabel] = useState("Cadastrar");
 
@@ -49,7 +32,9 @@ function CadastroLocalForm() {
             const dadosCep = await useBuscaCep(cepConsulta);
             setValue("logradouro", dadosCep.logradouro);
             setValue("municipio", dadosCep.localidade);
-            setValue("uf", dadosCep.uf);
+            setValue("bairro", dadosCep.bairro);
+            setValue("cidade", dadosCep.localidade);
+            setValue("estado", dadosCep.uf);
             const dadosLatLong = await useLatitudeLongitude(cepConsulta);
             setValue("latitude", dadosLatLong.lat);
             setValue("longitude", dadosLatLong.lng);
@@ -104,8 +89,10 @@ function CadastroLocalForm() {
             setValue("descricao", response.descricao);
             setValue("cep", response.cep);
             setValue("logradouro", response.logradouro);
+            setValue("bairro", response.bairro);
+            setValue("cidade", response.cidade);
             setValue("municipio", response.municipio);
-            setValue("uf", response.uf);
+            setValue("estado", response.estado);
             setValue("latitude", response.latitude);
             setValue("longitude", response.longitude);
 
@@ -125,7 +112,7 @@ function CadastroLocalForm() {
         setValue("cep", "");
         setValue("logradouro", "");
         setValue("municipio", "");
-        setValue("uf", "");
+        setValue("estado", "");
         setValue("latitude", "");
         setValue("longitude", "");
         setAtividades({
@@ -142,7 +129,6 @@ function CadastroLocalForm() {
     }
 
     useEffect(() => {
-
         if (id != "" && id !== undefined) {
             carregarDadosEdicao(id);
             setLabel("Editar");
@@ -262,6 +248,19 @@ function CadastroLocalForm() {
                         mb: 2
                     }}>
                     <TextField
+                        label="Bairro"
+                        variant="outlined"
+                        fullWidth
+                        margin="normal"
+                        error={!!errors.bairro}
+                        helperText={errors.bairro?.message}
+                        {...register("bairro", {
+                            required: "Este campo é obrigatório.",
+                            maxLength: { value: 50, message: "Máximo de 50 caracteres." }
+                        })}
+                        InputLabelProps={{ shrink: true }}
+                    />
+                    <TextField
                         label="Município"
                         variant="outlined"
                         fullWidth
@@ -274,6 +273,29 @@ function CadastroLocalForm() {
                         })}
                         InputLabelProps={{ shrink: true }}
                     />
+                </Box>
+
+                <Box
+                    sx={{
+                        display: "flex",
+                        flexDirection: { xs: "column", sm: "row" },
+                        gap: 2,
+                        width: "100%",
+                        mb: 2
+                    }}>
+                    <TextField
+                        label="Cidade"
+                        variant="outlined"
+                        fullWidth
+                        margin="normal"
+                        error={!!errors.localidade}
+                        helperText={errors.localidade?.message}
+                        {...register("cidade", {
+                            required: "Este campo é obrigatório.",
+                            maxLength: { value: 30, message: "Máximo de 30 caracteres." }
+                        })}
+                        InputLabelProps={{ shrink: true }}
+                    />
                     <TextField
                         label="Estado"
                         variant="outlined"
@@ -281,7 +303,7 @@ function CadastroLocalForm() {
                         margin="normal"
                         error={!!errors.uf}
                         helperText={errors.uf?.message}
-                        {...register("uf", {
+                        {...register("estado", {
                             required: "Este campo é obrigatório.",
                             maxLength: { value: 2, message: "Máximo de 2 caracteres." }
                         })}
@@ -306,7 +328,7 @@ function CadastroLocalForm() {
                         helperText={errors.latitude?.message}
                         {...register("latitude", {
                             required: "Este campo é obrigatório.",
-                            maxLength: { value: 10, message: "Máximo de 10 caracteres." }
+                            maxLength: { value: 11, message: "Máximo de 10 caracteres." }
                         })}
                         InputLabelProps={{ shrink: true }}
                     />
@@ -319,7 +341,7 @@ function CadastroLocalForm() {
                         helperText={errors.longitude?.message}
                         {...register("longitude", {
                             required: "Este campo é obrigatório.",
-                            maxLength: { value: 10, message: "Máximo de 10 caracteres." }
+                            maxLength: { value: 11, message: "Máximo de 10 caracteres." }
                         })}
                         InputLabelProps={{ shrink: true }}
                     />
@@ -328,10 +350,10 @@ function CadastroLocalForm() {
                 <FormControl
                     component="fieldset"
                     variant="standard"
-                    sx={{ width: "100%", mb: 3 }}>
-                    <FormLabel component="legend">Atividades Esportivas</FormLabel>
+                    sx={{ width: "100%", mb: 3}}>
+                    <FormLabel component="legend" sx={{ fontWeight: "bold", textAlign: "center", color: "primary.main"}}>Atividades Esportivas</FormLabel>
                     <FormGroup
-                        sx={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}>
+                        sx={{ display: "flex", flexDirection: "row", flexWrap: "wrap", mt: 2, justifyContent: "center" }}>
                         {atividadesDisponiveis.map((atividade, index) => (
                             <div className="atividade-item" key={index}>
                                 <FormControlLabel
