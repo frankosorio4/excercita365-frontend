@@ -1,13 +1,13 @@
-import { AppBar, Button, Divider, Drawer, Icon, IconButton, List, ListItem, ListItemText, Menu, MenuItem, Toolbar, Typography, useMediaQuery } from "@mui/material";
+import { AppBar, Button, Divider, Drawer, IconButton, List, ListItem, ListItemText, Menu, MenuItem, Toolbar, Typography, useMediaQuery } from "@mui/material";
 // import "./style.css";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Link, useNavigate } from "react-router-dom";
-import { useState, useContext } from "react";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { useApiUsuario } from "../../../hooks/useApiUsuario";
 import { getCookie } from "../../../hooks/useCookies";
 import { useTheme } from "@mui/material/styles";
-import { Draw } from "@mui/icons-material";
+
 const menuOptions = [
     { text: 'Pagina Inicial', link: '/home' },
     { text: 'Cadastrar Local', link: '/cadastroLocal' },
@@ -19,7 +19,6 @@ function ExerciseOpenAirHeader() {
     const [anchorEl, setAnchorEl] = useState(null);
     const { logout } = useApiUsuario();
     const [mobileManuOpen, setMobileMenuOpen] = useState(false);
-    const navigate = useNavigate();
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
@@ -35,7 +34,6 @@ function ExerciseOpenAirHeader() {
     const handleLogout = () => {
         logout(getCookie("usuarioLogado"));
         setAnchorEl(null);
-        // navigate("/login");
     };
 
     const toggleMobileMenu = () => {
@@ -48,9 +46,6 @@ function ExerciseOpenAirHeader() {
         }
         setMobileMenuOpen(false);
     };
-
-
-
 
     return (
         <AppBar className="header" position="fixed"
@@ -116,9 +111,6 @@ function ExerciseOpenAirHeader() {
                     </>
                 ) : (
                     <>
-
-
-
                         <Button
                             color="inherit"
                             component={Link}
@@ -139,8 +131,6 @@ function ExerciseOpenAirHeader() {
                                 color: "white",
                             }}>Listar Locais
                         </Button>
-
-
                         <Button
                             color="inherit"
                             aria-controls="simple-menu"
