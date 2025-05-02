@@ -1,18 +1,33 @@
-import {
-    Box,
-    Divider,
-    Card,
-    CardContent,
-    Typography,
-    Grid,
-    CardActions,
-    IconButton,
-    Button
-} from "@mui/material";
+import {Box, Divider, Card, CardContent, Typography, Grid, CardActions, IconButton, Button} from "@mui/material";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 import { useNavigate } from "react-router-dom";
 import MapaForm from "../MapaForm";
 import { useApiLocal } from "../../../hooks/useApiLocal";
+import PropTypes from "prop-types";
+
+CardLocalForm.propTypes = {
+    dadosLocal: PropTypes.shape({
+        id: PropTypes.number,
+        nome: PropTypes.string,
+        logradouro: PropTypes.string,
+        numeroCasa: PropTypes.number,
+        descricao: PropTypes.string,
+        bairro: PropTypes.string,
+        cidade: PropTypes.string,
+        estado: PropTypes.string,
+        cep: PropTypes.string,
+        latitude: PropTypes.string,
+        longitude: PropTypes.string,
+        linkmap: PropTypes.string,
+        atividades: PropTypes.arrayOf(
+            PropTypes.shape({
+                id: PropTypes.number,
+                nomeAtividade: PropTypes.string,
+            })
+        ),
+    }),
+    visivel: PropTypes.bool,
+};
 
 function CardLocalForm({ dadosLocal, visivel }) {
     const { removerLocal } = useApiLocal();
@@ -83,17 +98,20 @@ function CardLocalForm({ dadosLocal, visivel }) {
                     </Typography>
                     <Divider sx={{ mb: 1 }}>Endereço</Divider>
                     <Typography variant="subtitle1" color="text.secondary" sx={{ mt: 1 }}>
-                        Logradouro: {dadosLocal.logradouro}
+                        Logradouro: {dadosLocal.logradouro}, {dadosLocal.numeroCasa}. {dadosLocal.bairro}.
                     </Typography>
                     <Typography variant="subtitle1" color="text.secondary">
-                        Município/Estado: {dadosLocal.municipio} / {dadosLocal.uf}
+                        Cidade/Estado: {dadosLocal.cidade}/{dadosLocal.estado}.
                     </Typography>
                     <Typography variant="subtitle1" color="text.secondary">
+                        CEP: {dadosLocal.cep}
+                    </Typography>
+                    {/* <Typography variant="subtitle1" color="text.secondary">
                         Latitude: {dadosLocal.latitude}
                     </Typography>
                     <Typography variant="subtitle1" color="text.secondary">
                         Longitude: {dadosLocal.longitude}
-                    </Typography>
+                    </Typography> */}
                 </CardContent>
 
                 <Divider sx={{ my: 2 }}>Atividades</Divider>
