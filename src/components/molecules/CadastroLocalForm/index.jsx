@@ -234,8 +234,8 @@ function CadastroLocalForm() {
                         variant="outlined"
                         fullWidth
                         margin="normal"
-                        error={!!errors.uf}
-                        helperText={errors.uf?.message}
+                        error={!!errors.estado}
+                        helperText={errors.estado?.message}
                         {...register("estado", {
                             required: "Este campo é obrigatório.",
                             maxLength: { value: 2, message: "Máximo de 2 caracteres." }
