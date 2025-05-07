@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useApiUsuario } from "../../../hooks/useApiUsuario";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
+import Footer from "../../organisms/ExerciseOpenAirFooter";
 
 function LoginForm() {
     const {
@@ -59,8 +60,8 @@ function LoginForm() {
                                 {...register("email", {
                                     required: "Este campo é obrigatório.",
                                     maxLength: {
-                                        value: 100,
-                                        message: "Este campo aceita no máximo 100 caracteres."
+                                        value: 30,
+                                        message: "Este campo aceita no máximo 30 caracteres."
                                     }
                                 })}
                             />
@@ -107,6 +108,9 @@ function LoginForm() {
                         </Button>
                     </Grid>
                 </Grid>
+                <div className="containerFooter">
+                    <Footer />
+                </div>
             </Grid>
         </>
     );

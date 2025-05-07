@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 90vh;
+    height: 100vh;
     width: 100vw;
     background-color: #e5e5e5;
 }
@@ -27,10 +27,12 @@
     align-items: center;
     height: auto;
     width: 100%;
-    max-width: 700px;
+    /* min-width: 400px; */
+    max-width: 600px;
     background-color: white;
     border-radius: 10px;
-    padding: 35px;
+    padding: 30px;
+    /* border: red solid; */
 }
 
 .camposEntrada {
@@ -38,10 +40,11 @@
     flex-direction: column;
     width: 100%;
     gap: 20px;
+    /* border: blue solid; */
 }
 
 .camposEntrada div {
-    height: 2.5rem;
+    height: 3rem;
 }
 
 .camposEntrada input {
@@ -58,6 +61,7 @@
     width: 100%;
     margin-top: 25px;
     gap: 10px;
+    /* border: green solid; */
 }
 
 .containerButtonLogin .buttonLogin,
@@ -92,6 +96,23 @@
     font-weight: bold;
 }
 
+.containerFooter {
+    bottom: 0;
+    width: 100vw;
+    position: fixed;
+}
+
+@media (max-width: 425px) {
+
+    .containerButtonLogin .buttonLogin,
+    .containerButtonLogin .buttonRegister {
+        max-width: 100%;
+        width: 100%;
+        height: 35px;
+        font-size: 1rem;
+    }
+}
+
 @media (max-width: 640px) {
     .loginForm {
         width: 90%;
@@ -104,36 +125,28 @@
 
     .containerButtonLogin {
         flex-direction: column;
-
+        flex-wrap: wrap;
     }
 
     .containerButtonLogin .buttonLogin,
     .containerButtonLogin .buttonRegister {
-        width: 100%;
+        width: 200px;
         max-width: 100%;
     }
 }
 
-@media (max-width: 425px) {
-
-    .containerButtonLogin .buttonLogin,
-    .containerButtonLogin .buttonRegister {
-        max-width: 100%;
-        width: 100%;
-        height: 45px;
-        font-size: 1rem;
-    }
-}
-
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
 
     .email input::placeholder,
     .password input::placeholder {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
 
     }
+    .loginForm {
+        max-width: 700px;
+        padding: 40px;
+    }
 }
-
 
 @media (min-width: 2560px) {
     .loginForm {
