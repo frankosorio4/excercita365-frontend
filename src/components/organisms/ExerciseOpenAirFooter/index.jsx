@@ -5,7 +5,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { Grid } from "@mui/material";
 
-function TrilhasFooter() {
+function Footer() {
  return (
   <Grid className="containerFooter">
    <footer className="footer">
@@ -32,4 +32,4 @@ function TrilhasFooter() {
  );
 }
 
-export default TrilhasFooter;
+export default Footer;
