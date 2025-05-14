@@ -53,13 +53,11 @@ const routers = createBrowserRouter([
                 path: "cadastroLocal/:id",
                 element:
                     <CadastroLocalPage />
-
             },
             {
                 path: "listaLocal",
                 element:
                     <ListaLocalPage />
-
             }
         ]
     }
