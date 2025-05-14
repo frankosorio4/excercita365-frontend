@@ -7,7 +7,7 @@ function App() {
     return (
         <>
             <ExerciseOpenAirHeader />
-                <Outlet />
+            <Outlet />
             <ExerciseOpenAirFooter />
         </>
     );
