@@ -1,6 +1,7 @@
 /* eslint-disable */
 //import { Grid } from "@mui/material";
 import CadastroUsuarioForm from "../../components/molecules/CadastroUsuarioForm";
+import PublicFooter from "../../components/organisms/PublicFooter";
 //import styles from "./CadastroUsuarioPage.module.css";
 
 function CadastroUsuarioPage() {
@@ -8,6 +9,7 @@ function CadastroUsuarioPage() {
         //<Grid className={styles.containerUsuarioPrincipal}>
         <>
             <CadastroUsuarioForm />
+            <PublicFooter />
         </>
     )
 }

@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useApiUsuario } from "../../../hooks/useApiUsuario";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import Footer from "../../organisms/ExerciseOpenAirFooter";
+import Footer from "../../organisms/PrivateFooter";
 
 function LoginForm() {
     const {
@@ -108,9 +108,6 @@ function LoginForm() {
                         </Button>
                     </Grid>
                 </Grid>
-                <div className="containerFooter">
-                    <Footer />
-                </div>
             </Grid>
         </>
     );

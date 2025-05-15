@@ -96,12 +96,6 @@
     font-weight: bold;
 }
 
-.containerFooter {
-    bottom: 0;
-    width: 100vw;
-    position: fixed;
-}
-
 @media (max-width: 425px) {
 
     .containerButtonLogin .buttonLogin,
