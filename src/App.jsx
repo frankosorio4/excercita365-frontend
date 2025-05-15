@@ -1,14 +1,14 @@
 import { Outlet } from "react-router-dom";
 
-import ExerciseOpenAirHeader from "./components/organisms/ExerciseOpenAirHeader";
-import ExerciseOpenAirFooter from "./components/organisms/ExerciseOpenAirFooter";
+import PrivateFooter from "./components/organisms/PrivateFooter";
+import PrivateHeader from "./components/organisms/PrivateHeader";
 
 function App() {
     return (
         <>
-            <ExerciseOpenAirHeader />
+            <PrivateHeader/>
             <Outlet />
-            <ExerciseOpenAirFooter />
+            <PrivateFooter />
         </>
     );
 }

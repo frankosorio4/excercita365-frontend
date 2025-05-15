@@ -1,5 +1,5 @@
 import { AppBar, Button, Divider, Drawer, IconButton, List, ListItem, ListItemText, Menu, MenuItem, Toolbar, Typography, useMediaQuery } from "@mui/material";
-// import "./style.css";
+import styles from "./style.module.css";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
 import { useState } from "react";
@@ -15,7 +15,7 @@ const menuOptions = [
     { text: 'Sair', action: 'logout' }
 ];
 
-function ExerciseOpenAirHeader() {
+function PrivateHeader() {
     const [anchorEl, setAnchorEl] = useState(null);
     const { logout } = useApiUsuario();
     const [mobileManuOpen, setMobileMenuOpen] = useState(false);
@@ -48,24 +48,10 @@ function ExerciseOpenAirHeader() {
     };
 
     return (
-        <AppBar className="header" position="fixed"
-            sx={{
-                backgroundColor: "rgb(156,192,227)",
-                boxShadow: "none",
-                height: "60px",
-            }}>
-            <Toolbar className="navbar"
-                sx={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                }}>
-                <Typography className="logoHeader"
-                    variant="h6" component="div"
-                    sx={{
-                        flexGrow: 1,
-                        marginLeft: "20px",
-                    }}>
+        <AppBar className={styles.containerHeader}>
+            <Toolbar className={styles.navbar}>
+                <Typography className={styles.logoHeader}
+                    variant="h6" component="div">
                     <Link className="labelHome" to="/home" style={{ display: 'flex' }}>
                         <img src="/assets/logo-exercita365.png"
                             alt="Logo da página"
@@ -111,25 +97,17 @@ function ExerciseOpenAirHeader() {
                     </>
                 ) : (
                     <>
-                        <Button
+                        <Button className={styles.buttonHeader1}
                             color="inherit"
                             component={Link}
                             to="/cadastroLocal"
-                            sx={{
-                                fontWeight: "bold",
-                                fontSize: "18px",
-                                color: "white",
-                            }}>Cadastrar Local
+                            >Cadastrar Local
                         </Button>
-                        <Button
+                        <Button className={styles.buttonHeader1}
                             color="inherit"
                             component={Link}
                             to="/listaLocal"
-                            sx={{
-                                fontWeight: "bold",
-                                fontSize: "18px",
-                                color: "white",
-                            }}>Listar Locais
+                            >Listar Locais
                         </Button>
                         <Button
                             color="inherit"
@@ -137,7 +115,7 @@ function ExerciseOpenAirHeader() {
                             aria-haspopup="true"
                             onClick={handleClick}
                             className="sair">
-                            <AccountCircleIcon sx={{ color: "withe", fontSize: 35 }} />
+                            <AccountCircleIcon sx={{ color: "white", fontSize: 35 }} />
                         </Button>
                         <Menu
                             id="simple-menu"
@@ -155,4 +133,4 @@ function ExerciseOpenAirHeader() {
     );
 }
 
-export default ExerciseOpenAirHeader;
+export default PrivateHeader;

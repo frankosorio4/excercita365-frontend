@@ -1,9 +1,32 @@
-/* * {
- margin: 0;
- padding: 0;
- box-sizing: border-box;
- font-family: "Inter", sans-serif;
+.containerHeader {
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgb(156,192,227);
+  height: 60px;
+  box-shadow: none;
+  font-family: "Inter", sans-serif;
 }
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logoHeader{
+  flex-grow: 1;
+  margin-left: 20px;
+}
+
+.buttonHeader1{
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+}
+
+
+/* *
 
 .header {
  display: flex;

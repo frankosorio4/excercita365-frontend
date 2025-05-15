@@ -1,11 +1,10 @@
 import "./style.css";
-import "../../../../src/App.css";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { Grid } from "@mui/material";
 
-function Footer() {
+function PrivateFooter() {
  return (
   <Grid className="containerFooter">
    <footer className="footer">
@@ -32,4 +31,4 @@ function Footer() {
  );
 }
 
-export default Footer;
+export default PrivateFooter;
