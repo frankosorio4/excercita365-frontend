@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { TextField, Button, FormLabel, FormControl, FormGroup, FormControlLabel, Checkbox, Box, Typography}
+import { TextField, Button, FormLabel, FormControl, FormGroup, FormControlLabel, Checkbox, Box, Typography }
     from "@mui/material";
 import { useForm } from "react-hook-form";
 import "./index.css";
@@ -136,6 +136,15 @@ function CadastroLocalForm() {
         }
         limparCampos();
     }, [id]);
+
+    useEffect(() => {
+        // Initialize the atividades state with the available activities
+        const initialAtividades = {};
+        atividadesDisponiveis.forEach((atividade) => {
+            initialAtividades[atividade.nomeAtividade] = false;
+        });
+        setAtividades(initialAtividades);
+    }, []);
 
     return (
         <Box
