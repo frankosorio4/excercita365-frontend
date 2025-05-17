@@ -2,7 +2,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgb(156,192,227);
+  background-color: rgb(156,192,227) !important;
   height: 60px;
   box-shadow: none;
   font-family: "Inter", sans-serif;

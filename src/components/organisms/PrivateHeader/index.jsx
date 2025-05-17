@@ -46,10 +46,10 @@ function PrivateHeader() {
         }
         setMobileMenuOpen(false);
     };
-
     return (
         <AppBar className={styles.containerHeader}>
-            <Toolbar className={styles.navbar}>
+            <Toolbar className={styles.navbar}
+                >
                 <Typography className={styles.logoHeader}
                     variant="h6" component="div">
                     <Link className="labelHome" to="/home" style={{ display: 'flex' }}>
@@ -101,12 +101,18 @@ function PrivateHeader() {
                             color="inherit"
                             component={Link}
                             to="/cadastroLocal"
+                            sx={
+                                { fontWeight: "bold", fontSize: "18px", color: "white" }
+                            }
                             >Cadastrar Local
                         </Button>
                         <Button className={styles.buttonHeader1}
                             color="inherit"
                             component={Link}
                             to="/listaLocal"
+                            sx={
+                                { fontWeight: "bold", fontSize: "18px", color: "white" }
+                            }
                             >Listar Locais
                         </Button>
                         <Button
