@@ -16,6 +16,7 @@ export const useApiLocal = () => {
     }
   }, [token]);
 
+  // Função para obter os locais public y por usuario
   const getLocais = async () => {
     const token = getCookie("authToken"); // Obtém o token, se existir
     //const usuarioId = getCookie("usuarioId"); // Obtém o ID do usuário do cookie
@@ -48,8 +49,8 @@ export const useApiLocal = () => {
       // Verifica se a resposta "json" é uma lista ou um objeto
       // Se for um objeto, verifica se tem a propriedade 'locais' ou 'data'
       const data = Array.isArray(json)        // já é lista?
-      ? json                                  // → usa direto
-      : json.locais ?? json.data ?? [json];   // senão pegue a prop correta
+        ? json                                  // → usa direto
+        : json.locais ?? json.data ?? [json];   // senão pegue a prop correta
       setLocais(data);
       setTotalLocais(data.length);
 
@@ -62,19 +63,12 @@ export const useApiLocal = () => {
   };
 
   const getAtividades = async () => {
-    const token = getCookie("authToken"); // Obtém o token, se existir
 
     const url = `${import.meta.env.VITE_URL_API}/dashboard/atividades`;//rota publica
 
-    const headers = token
-      ? {
-        Authorization: `Bearer ${token}`, // Cabeçalho com token, se houver
-        "Content-Type": "application/json"
-      }
-      : {}; // Sem cabeçalho para a página pública
-
     try {
-      const response = await fetch(url, { headers });
+
+      const response = await fetch(url);
 
       if (!response.ok) {
         const errorData = await response.json();
@@ -195,6 +189,7 @@ export const useApiLocal = () => {
     editarLocal,
     getLocalPorId,
     removerLocal,
-    atividadesDisponiveis
+    atividadesDisponiveis,
+    getAtividades,
   };
 };

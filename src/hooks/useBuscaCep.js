@@ -10,8 +10,9 @@ async function useBuscaCep(cep) {
 
     return data;
   } catch (error) {
-    console.error("Error fetching data:", error);
+    console.error("Error fetching data for CEP:", error);
     return null;
   }
 }
+
 export default useBuscaCep;
