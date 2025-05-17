@@ -5,6 +5,7 @@ function ListaLocalPage() {
     <LayoutComum
             titulo={`Locais criados por você `}
             showAuthButtons={false}
+            showIcons={false}
             visivel={true}
         />
  );
